@@ -1,32 +1,32 @@
 {
-    "ru":{
-        "driver": "Водитель",
-        "vehicleType":"Тип ТС",
-        "cargo": "Грузовой",
-        "passenger": "Пассажирский",
-        "special": "Спецтехника",
-        "vehiclesList": "Список ТС",
-        "settings": "Настройки",
-        "vehicle": "Техника",
-        "phone": "Номер телефона",
-        "write":"Написать",
-        "call":"Позвонить",
-        "lang":"Язык",
-        "noData": "Нет данных"
-    },
-    "en": {
-        "driver": "Driver",
-        "vehicleType":"Type",
-        "cargo": "Cargo",
-        "passenger": "Passenger",
-        "special": "Special",
-        "vehiclesList": "Vehicle list",
-        "settings": "Settings",
-        "vehicle": "Vehicle",
-        "phone": "Phone number",
-        "write":"Write",
-        "call":"Call",
-        "lang":"Language",
-        "noData": "No data"
-    }
+  "ru": {
+    "driver": "Водитель",
+    "vehicleType": "Тип ТС",
+    "cargo": "Грузовой",
+    "passenger": "Пассажирский",
+    "special": "Спецтехника",
+    "vehiclesList": "Список ТС",
+    "settings": "Настройки",
+    "vehicle": "Техника",
+    "phone": "Номер телефона",
+    "write": "Написать",
+    "call": "Позвонить",
+    "lang": "Язык",
+    "noData": "Нет данных"
+  },
+  "en": {
+    "driver": "Driver",
+    "vehicleType": "Type",
+    "cargo": "Cargo",
+    "passenger": "Passenger",
+    "special": "Special",
+    "vehiclesList": "Vehicle list",
+    "settings": "Settings",
+    "vehicle": "Vehicle",
+    "phone": "Phone number",
+    "write": "Write",
+    "call": "Call",
+    "lang": "Language",
+    "noData": "No data"
+  }
 }

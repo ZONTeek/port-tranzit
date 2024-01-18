@@ -1,3 +1,4 @@
+import { Link } from "expo-router";
 import React from "react";
 import {
   ActivityIndicator,
@@ -7,8 +8,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+
 import { useVehicles } from "../../src/hooks/useVehicles";
-import { Link } from "expo-router";
 import { CarIcon } from "./CarIcon";
 import { Filter } from "./Filter";
 import { useLanguage } from "./LanguageProvider";

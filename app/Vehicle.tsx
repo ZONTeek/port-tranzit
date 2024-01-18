@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
 import { useLocalSearchParams } from "expo-router";
+import React, { useEffect, useRef } from "react";
 import {
   ActivityIndicator,
   Button,
@@ -11,8 +11,8 @@ import {
 } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 
-import { CarIcon } from "./components/CarIcon";
 import { useVehicles } from "../src/hooks/useVehicles";
+import { CarIcon } from "./components/CarIcon";
 import { useLanguage } from "./components/LanguageProvider";
 
 function Vehicle(): JSX.Element {
@@ -45,7 +45,7 @@ function Vehicle(): JSX.Element {
       `https://wa.me/${data.number}?text=Добрый день, подскажите пожалуйста, какой номер заказа у вас сейчас в работе`
     );
   };
-  
+
   if (!data) {
     return <ActivityIndicator />;
   }
@@ -54,7 +54,10 @@ function Vehicle(): JSX.Element {
     <View style={{ flex: 1 }}>
       <MapView ref={mapRef} style={styles.map}>
         <Marker
-          coordinate={{ latitude: Number(data.coords[0]), longitude: Number(data.coords[1]) }}
+          coordinate={{
+            latitude: Number(data.coords[0]),
+            longitude: Number(data.coords[1]),
+          }}
         />
       </MapView>
       <View style={styles.container}>

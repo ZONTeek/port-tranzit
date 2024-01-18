@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Link, Stack } from "expo-router";
-import { Button, View } from "react-native";
+import { Button } from "react-native";
 import { LanguageProvider, useLanguage } from "./components/LanguageProvider";
 
 export const queryClient = new QueryClient();
