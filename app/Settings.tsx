@@ -3,11 +3,16 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import i18n from "../src/localization";
 import { useLanguage } from "./components/LanguageProvider";
 
+const LANGUAGES = {
+  EN: "en",
+  RU: "ru",
+};
+
 export default function Settings(): JSX.Element {
   const { lang, setLang, t } = useLanguage();
 
   const changeLang = () => {
-    setLang(i18n.locale === "en" ? "ru" : "en");
+    setLang(i18n.locale === LANGUAGES.EN ? LANGUAGES.RU : LANGUAGES.EN);
   };
 
   return (

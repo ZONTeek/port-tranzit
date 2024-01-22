@@ -16,7 +16,7 @@ import { useLanguage } from "./LanguageProvider";
 
 export const VehiclesList = (): JSX.Element => {
   const {
-    vehicles: { data, isLoading },
+    vehicles: { data, isLoading, isError },
     filters,
     setFilters,
   } = useVehicles();
@@ -44,31 +44,26 @@ export const VehiclesList = (): JSX.Element => {
     );
   };
 
-  if (isLoading && !data) {
+  if (isLoading) {
     return <ActivityIndicator size={"large"} style={styles.placeholder} />;
+  }
+
+  if (isError || !data) {
+    return <Text>{t("error")}</Text>;
   }
 
   return (
     <View style={styles.container}>
       <View style={styles.filters}>
-        <Filter
-          isActive={filters["cargo"]}
-          title={t("cargo")}
-          value={"cargo"}
-          onPress={toggleFilter}
-        />
-        <Filter
-          isActive={filters["passenger"]}
-          title={t("passenger")}
-          value={"passenger"}
-          onPress={toggleFilter}
-        />
-        <Filter
-          isActive={filters["special"]}
-          title={t("special")}
-          value={"special"}
-          onPress={toggleFilter}
-        />
+        {Object.keys(filters).map((filter) => (
+          <Filter
+            key={filter}
+            isActive={filters[filter]}
+            title={t(filter)}
+            value={filter}
+            onPress={toggleFilter}
+          />
+        ))}
       </View>
       {data.length === 0 ? (
         <Text style={styles.placeholder}>{t("noData")}</Text>

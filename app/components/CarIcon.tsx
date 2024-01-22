@@ -6,6 +6,12 @@ import Tractor from "../../assets/tractor.png";
 import Truck from "../../assets/truck.png";
 import { VehicleType } from "../../src/types";
 
+const IMAGES = {
+  cargo: Truck,
+  passenger: Bus,
+  special: Tractor,
+};
+
 export const CarIcon = ({
   type,
   style,
@@ -13,13 +19,7 @@ export const CarIcon = ({
   type: VehicleType;
   style?: ImageStyle;
 }): JSX.Element => {
-  if (type === "special") {
-    return <Image source={Tractor} style={[styles.img, style]} />;
-  }
-  if (type === "cargo") {
-    return <Image source={Truck} style={[styles.img, style]} />;
-  }
-  return <Image source={Bus} style={[styles.img, style]} />;
+  return <Image source={IMAGES[type]} style={[styles.img, style]} />;
 };
 
 const styles = StyleSheet.create({

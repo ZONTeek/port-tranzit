@@ -51,7 +51,7 @@ function Vehicle(): JSX.Element {
   }
 
   return (
-    <View style={{ flex: 1 }}>
+    <View style={styles.wrapper}>
       <MapView ref={mapRef} style={styles.map}>
         <Marker
           coordinate={{
@@ -62,23 +62,11 @@ function Vehicle(): JSX.Element {
       </MapView>
       <View style={styles.container}>
         <Pressable onPress={moveToVehicle}>
-          <CarIcon
-            type={data.vehicleType}
-            style={{ alignSelf: "center", width: 80, height: 80 }}
-          />
+          <CarIcon type={data.vehicleType} style={styles.icon} />
         </Pressable>
-        <View style={styles.vehicleInfo}>
-          <Text style={styles.vehicleInfoText}>{t("driver")}</Text>
-          <Text style={styles.vehicleInfoText}>{data.driver}</Text>
-        </View>
-        <View style={styles.vehicleInfo}>
-          <Text style={styles.vehicleInfoText}>{t("vehicleType")}</Text>
-          <Text style={styles.vehicleInfoText}>{t([data.vehicleType])}</Text>
-        </View>
-        <View style={styles.vehicleInfo}>
-          <Text style={styles.vehicleInfoText}>{t("phone")}</Text>
-          <Text style={styles.vehicleInfoText}>{data.number}</Text>
-        </View>
+        <VehicleInfoRow left={t("vehicleType")} right={data.vehicleType} />
+        <VehicleInfoRow left={t("driver")} right={data.driver} />
+        <VehicleInfoRow left={t("phone")} right={data.number} />
         <View style={styles.actionBtns}>
           <Button title={t("write")} onPress={openWhatsApp} />
           <Button title={t("call")} onPress={call} />
@@ -88,9 +76,25 @@ function Vehicle(): JSX.Element {
   );
 }
 
+const VehicleInfoRow = ({
+  left,
+  right,
+}: {
+  left: string;
+  right: string;
+}): JSX.Element => {
+  return (
+    <View style={styles.vehicleInfo}>
+      <Text style={styles.vehicleInfoText}>{left}</Text>
+      <Text style={styles.vehicleInfoText}>{right}</Text>
+    </View>
+  );
+};
+
 export default Vehicle;
 
 const styles = StyleSheet.create({
+  wrapper: { flex: 1 },
   container: {
     marginHorizontal: 20,
     flex: 1,
@@ -112,4 +116,5 @@ const styles = StyleSheet.create({
   vehicleInfoText: {
     fontSize: 16,
   },
+  icon: { alignSelf: "center", width: 80, height: 80 },
 });

@@ -12,7 +12,8 @@
     "write": "Написать",
     "call": "Позвонить",
     "lang": "Язык",
-    "noData": "Нет данных"
+    "noData": "Нет данных",
+    "error": "Произошла ошибка во время загрузки"
   },
   "en": {
     "driver": "Driver",
@@ -27,6 +28,7 @@
     "write": "Write",
     "call": "Call",
     "lang": "Language",
-    "noData": "No data"
+    "noData": "No data",
+    "error": "There was an error during fetching"
   }
 }
